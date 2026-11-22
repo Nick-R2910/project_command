@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2026 Ryota Furutani
+# SPDX-License-Identifier: BSD-3-Clause
 
 #Uesugi_Cipher_Decoder(上杉暗号解読コード)
 uesugi_cipher = [["い","ろ","は","に","ほ","へ","と"],
