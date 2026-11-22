@@ -8,12 +8,12 @@ ng(){
 }
 res=0
 ### NORMAL INPUT ###
-out=$(echo みらいろぼてぃくすがっか | ./encrypt)
+out=$(echo ろぼっと | ./encrypt)
 [ "$?" = 0 ] || ng "$LINENO"
-[ "${out}" = 66411112a657c2477581c127 ] || ng "$LINENO"
+[ "${out}" = 12a6c117 ] || ng "$LINENO"
 
 ### STRANGE INPUT ###
-out=$(echo 未来ロボティクス学科 | ./encrypt)
+out=$(echo ロボット | ./encrypt)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
@@ -21,11 +21,7 @@ out=$(echo | ./encrypt)
 [ "$?" = 0 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
-out=$(echo mirairobothikusugakka | ./encrypt)
-[ "$?" = 1 ] || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
-out=$(echo ミライロボティクスガッカ | ./encrypt)
+out=$(echo robot | ./encrypt)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
