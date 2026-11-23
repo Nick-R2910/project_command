@@ -7,21 +7,36 @@ ng(){
     res=1
 }
 res=0
-### NORMAL INPUT ###
+### NORMAL INPUT(encrypt) ###
 out=$(echo ろぼっと | ./encrypt)
 [ "$?" = 0 ] || ng "$LINENO"
 [ "${out}" = 12a6c117 ] || ng "$LINENO"
 
-### STRANGE INPUT ###
+out=$(echo | ./encrypt)
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+### NORMAL INPUT(decode) ###
+out=$(echo 12a6c117 | ./decode)
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = ろぼっと ] || ng "$LINENO"
+
+out=$(echo | ./decode)
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+### STRANGE INPUT(encrypt) ###
 out=$(echo ロボット | ./encrypt)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
-out=$(echo | ./encrypt)
-[ "$?" = 0 ] || ng "$LINENO"
+out=$(echo robot | ./encrypt)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+### STRANGE INPUT(decode) ###
+out=$(echo ろぼっと | ./decode)
+[ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
-out=$(echo robot | ./encrypt)
+out=$(echo robot | ./decode)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
