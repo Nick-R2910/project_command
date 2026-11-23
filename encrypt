@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 Ryota Furutani
 # SPDX-License-Identifier: BSD-3-Clause
 
@@ -14,7 +14,7 @@ uesugi_cipher = [["い","ろ","は","に","ほ","へ","と"],
                  ["ず","ぜ","ぞ","だ","ぢ","づ","で"],
                  ["ど","ば","び","ぶ","べ","ぼ","ぱ"],
                  ["ぴ","ぷ","ぺ","ぽ","ゃ","ゅ","ょ"],
-                 ["っ"]]
+                 ["っ","ぃ"]]
 def encryption(message):
     for gyou,row in enumerate(uesugi_cipher):
         for retu,txt in enumerate(row):
